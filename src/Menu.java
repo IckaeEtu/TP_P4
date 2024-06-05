@@ -2,24 +2,20 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
-import javafx.scene.text.Font;
-import javafx.stage.Stage;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.Image;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
-import javafx.scene.control.ButtonBar.ButtonData;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Arrays;
-import java.io.File;
-import java.util.ArrayList;
+import javafx.stage.Stage;
 
 
 public class Menu extends Application{
@@ -48,8 +44,6 @@ public class Menu extends Application{
         fenetre.setCenter(this.panelCentral);
         return new Scene(fenetre, 800, 1000);
     }
-
-
 
     public Pane titre(){
         Stage stage = new Stage();
@@ -99,13 +93,10 @@ public class Menu extends Application{
         Stage stage = new Stage();
         stage.setTitle("Puissance 4");
 
-        
-
         this.btnConnexion= new Button("Connexion");
         this.btnSkin= new Button("Skin");
         panelCentral.setLeft(this.btnSkin);
         panelCentral.setRight(btnConnexion);
-
 
         VBox vbox= new VBox();
         vbox.setAlignment(javafx.geometry.Pos.CENTER);
@@ -120,9 +111,6 @@ public class Menu extends Application{
         vbox.setSpacing(50);
         this.panelCentral.setCenter(vbox);
         this.panelCentral.setPadding(new Insets(15, 12, 15, 12));
-        
-        
-        
     }
 
     public void majAffichage() {
