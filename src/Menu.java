@@ -27,9 +27,10 @@ public class Menu extends Application{
     private Button btnSkin;
     private Label text;
     private BorderPane panelCentral;
+    private Chronometre chrono;
 
     @Override
-    private void init() {
+    public void init() {
         this.btnFermé=new Button();
         this.btnLancer = new Button();
         this.btnConnexion = new Button();
@@ -53,7 +54,7 @@ public class Menu extends Application{
 
         BorderPane bp = new BorderPane();
 
-        Label l1 = new Label("Jeu du pendu");
+        Label l1 = new Label("Jeu du puissance 4");
         bp.setLeft(l1);
 
         HBox hb = new HBox();
@@ -92,26 +93,64 @@ public class Menu extends Application{
 
         
 
-        BorderPane bpConnexion= new BorderPane();
         this.btnConnexion= new Button("Connexion");
-        bpConnexion.setRight(this.btnConnexion);
         this.btnSkin= new Button("skin");
         panelCentral.setLeft(this.btnSkin);
-        panelCentral.setTop(bpConnexion);
+        panelCentral.setRight(btnConnexion);
 
 
         VBox vbox= new VBox();
-        Label text= new Label("Bienvenue sur le Puissance 4");
-        vbox.getChildren().add(text);
+        vbox.setAlignment(javafx.geometry.Pos.CENTER);
         this.btnLancer = new Button("Lancer la partie");
         vbox.getChildren().add(this.btnLancer);
         this.btnFermé= new Button("quitter");
         vbox.getChildren().add(this.btnFermé);
         
+        vbox.setSpacing(50);
+        this.panelCentral.setCenter(vbox);
+        this.panelCentral.setPadding(new Insets(15, 12, 15, 12));
+        
+        
+        
     }
 
     public void majAffichage() {
 
+    }
+
+    public void lancePartie(){
+
+    }
+
+    public Alert popUpPartieEnCours() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
+                "La partie est en cours!\n Etes-vous sûr de l'interrompre ?", ButtonType.YES, ButtonType.NO);
+        alert.setTitle("Attention");
+        return alert;
+    }
+
+    public Alert popUpReglesDuJeu() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Règle du pendu");
+        alert.setContentText("trouvez le mot caché en choisissant des lettres, a chaque erreurs un bonhomme se formera et si vous perdez il sera pendu");
+        return alert;
+    }
+
+    public Alert popUpMessageGagne() {
+        
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Vous avez gagné !!!");
+        this.chrono.stop();
+        alert.setContentText("Félicitation");
+        return alert;
+    }
+
+    public Alert popUpMessagePerdu() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Perdu");
+        this.chrono.stop();
+        alert.setContentText(" Peut mieux faire");
+        return alert;
     }
 
     @Override
@@ -120,5 +159,8 @@ public class Menu extends Application{
         stage.setScene(this.laScene());
         this.pageAccueil();
         stage.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
     }
 }
