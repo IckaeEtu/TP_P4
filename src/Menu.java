@@ -1,4 +1,6 @@
 import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
@@ -37,6 +39,7 @@ public class Menu extends Application{
         this.btnSkin = new Button();
         this.text= new Label();
         this.panelCentral= new BorderPane();
+        this.chrono= new Chronometre();
     }
 
     private Scene laScene() {
@@ -104,6 +107,9 @@ public class Menu extends Application{
         this.btnLancer = new Button("Lancer la partie");
         vbox.getChildren().add(this.btnLancer);
         this.btnFermé= new Button("quitter");
+        btnFermé.setOnAction((ActionEvent event) ->{
+            Platform.exit();
+        });
         vbox.getChildren().add(this.btnFermé);
         
         vbox.setSpacing(50);
@@ -115,11 +121,13 @@ public class Menu extends Application{
     }
 
     public void majAffichage() {
-
+        
     }
 
     public void lancePartie(){
-
+        pageAccueil();
+        this.chrono.resetTime();
+        this.chrono.start();
     }
 
     public Alert popUpPartieEnCours() {
@@ -152,6 +160,8 @@ public class Menu extends Application{
         alert.setContentText(" Peut mieux faire");
         return alert;
     }
+
+    
 
     @Override
     public void start (Stage stage){
