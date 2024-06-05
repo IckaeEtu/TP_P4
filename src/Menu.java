@@ -57,14 +57,16 @@ public class Menu extends Application{
 
         BorderPane bp = new BorderPane();
 
-        Label l1 = new Label("Jeu du puissance 4");
+        Label l1 = new Label("  Jeu du puissance 4");
         bp.setLeft(l1);
 
         HBox hb = new HBox();
 
         Button home = new Button();
         ImageView image1 = new ImageView("file:img/home.png");
-        //home.setOnAction("");
+        home.setOnAction((ActionEvent event) ->{
+            this.pageAccueil();
+        });
         home.setGraphic(image1);
         image1.setFitHeight(40);
         image1.setFitWidth(40);
@@ -79,13 +81,16 @@ public class Menu extends Application{
 
         Button info = new Button();
         ImageView image3 = new ImageView("file:img/info.png");
-        //info.setOnAction();
+        info.setOnAction((ActionEvent event) ->{
+            this.popUpReglesDuJeu().showAndWait();
+        });
         info.setGraphic(image3);
         image3.setFitHeight(40);
         image3.setFitWidth(40);
 
         hb.getChildren().addAll(home, param, info);
         bp.setRight(hb);
+        bp.setBackground(new Background(new BackgroundFill(Color.GRAY, null, null)));
         return bp;
     }
 
@@ -97,7 +102,7 @@ public class Menu extends Application{
         
 
         this.btnConnexion= new Button("Connexion");
-        this.btnSkin= new Button("skin");
+        this.btnSkin= new Button("Skin");
         panelCentral.setLeft(this.btnSkin);
         panelCentral.setRight(btnConnexion);
 
@@ -106,7 +111,7 @@ public class Menu extends Application{
         vbox.setAlignment(javafx.geometry.Pos.CENTER);
         this.btnLancer = new Button("Lancer la partie");
         vbox.getChildren().add(this.btnLancer);
-        this.btnFermé= new Button("quitter");
+        this.btnFermé= new Button("Quitter");
         btnFermé.setOnAction((ActionEvent event) ->{
             Platform.exit();
         });
@@ -139,8 +144,8 @@ public class Menu extends Application{
 
     public Alert popUpReglesDuJeu() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Règle du pendu");
-        alert.setContentText("trouvez le mot caché en choisissant des lettres, a chaque erreurs un bonhomme se formera et si vous perdez il sera pendu");
+        alert.setTitle("Règle du p4");
+        alert.setContentText("PLACEZ LES JETONS SUR LES CASES EN BAS DE LA GRILLE ET AYEZ UNE LIGNE DE 4 POUR GAGNER");
         return alert;
     }
 
