@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Icon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -10,7 +9,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -36,13 +34,11 @@
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="66.0" text="Joueur 1" textAlignment="CENTER" />
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
                      <children>
-                        <Icon content="TIMER" prefWidth="22.0" />
                         <Text id="timerJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="0:24" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="44.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
                      <children>
-                        <Icon content="LENS" prefWidth="22.0" />
                         <Text id="nbPionsJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                      </children>
                   </HBox>
@@ -64,13 +60,11 @@
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="66.0" text="Joueur 2" textAlignment="CENTER" />
                   <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
                      <children>
-                        <Icon content="TIMER" prefWidth="22.0" />
                         <Text id="timerJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="0:0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="44.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
                      <children>
-                        <Icon content="LENS" prefWidth="22.0" />
                         <Text id="nbPionsJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
                      </children>
                   </HBox>
