@@ -18,7 +18,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 
-public class Menu extends Application{
+public class Menu extends BorderPane{
     private Button btnLancer;
     private Button btnFermé;
     private Button  btnConnexion;
@@ -27,16 +27,11 @@ public class Menu extends Application{
     private BorderPane panelCentral;
     private Chronometre chrono;
 
-    @Override
-    public void init() {
-        this.btnFermé=new Button();
-        this.btnLancer = new Button();
-        this.btnConnexion = new Button();
-        this.btnSkin = new Button();
-        this.text= new Label();
-        this.panelCentral= new BorderPane();
-        this.chrono= new Chronometre();
+
+    public Menu(Stage stage){
+        start(stage);
     }
+
 
     private Scene laScene() {
         BorderPane fenetre = new BorderPane();
@@ -89,7 +84,7 @@ public class Menu extends Application{
     }
 
 
-    private void pageAccueil(){
+    private BorderPane pageAccueil(){
         Stage stage = new Stage();
         stage.setTitle("Puissance 4");
 
@@ -111,10 +106,7 @@ public class Menu extends Application{
         vbox.setSpacing(50);
         this.panelCentral.setCenter(vbox);
         this.panelCentral.setPadding(new Insets(15, 12, 15, 12));
-    }
-
-    public void majAffichage() {
-        
+        return this.panelCentral;
     }
 
     public void lancePartie(){
@@ -156,14 +148,19 @@ public class Menu extends Application{
 
     
 
-    @Override
-    public void start (Stage stage){
+
+    public void start(Stage stage){
+        this.btnFermé=new Button();
+        this.btnLancer = new Button();
+        this.btnConnexion = new Button();
+        this.btnSkin = new Button();
+        this.text= new Label();
+        this.panelCentral= new BorderPane();
+        this.chrono= new Chronometre();
         stage.setTitle("Puissance 4");
         stage.setScene(this.laScene());
         this.pageAccueil();
         stage.show();
     }
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 }
