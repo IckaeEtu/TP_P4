@@ -20,7 +20,6 @@ public class Exe {
         p.jouer(3);
         System.out.println(p.victoireDiag1(0,0));
         System.out.println(p.victoire(0,0));
-        System.out.println(p.convert(p.getJeton(0, 0)));
         System.out.println(p.getJoueurActuel());
         System.out.println(p.victoire(1,1));
         System.out.println(p.toString());
