@@ -29,9 +29,21 @@ public class Menu extends BorderPane{
 
 
     public Menu(Stage stage){
+        this.btnFermé=new Button();
+        this.btnLancer = new Button();
+        this.btnConnexion = new Button();
+        this.btnSkin = new Button();
+        this.text= new Label();
+        this.panelCentral= new BorderPane();
+        this.chrono= new Chronometre();
         start(stage);
     }
-
+    public void start(Stage stage){
+        stage.setTitle("Puissance 4");
+        stage.setScene(this.laScene());
+        this.pageAccueil();
+        stage.show();
+    }
 
     private Scene laScene() {
         BorderPane fenetre = new BorderPane();
@@ -145,22 +157,4 @@ public class Menu extends BorderPane{
         alert.setContentText(" Peut mieux faire");
         return alert;
     }
-
-    
-
-
-    public void start(Stage stage){
-        this.btnFermé=new Button();
-        this.btnLancer = new Button();
-        this.btnConnexion = new Button();
-        this.btnSkin = new Button();
-        this.text= new Label();
-        this.panelCentral= new BorderPane();
-        this.chrono= new Chronometre();
-        stage.setTitle("Puissance 4");
-        stage.setScene(this.laScene());
-        this.pageAccueil();
-        stage.show();
-    }
-
 }
