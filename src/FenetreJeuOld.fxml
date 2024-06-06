@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER" prefHeight="64.0" prefWidth="600.0">
+         <children>
+            <Text id="titre" strokeType="OUTSIDE" strokeWidth="0.0" text="Au tour du Joueur 1" textAlignment="CENTER">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <BorderPane prefHeight="334.0" prefWidth="600.0">
+         <left>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="100.0" spacing="10.0" style="-fx-background-radius: 10px; -fx-background-color: #ededed;" BorderPane.alignment="TOP_CENTER">
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="66.0" text="Joueur 1" textAlignment="CENTER" />
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
+                     <children>
+                        <Text id="timerJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="0:24" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="44.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
+                     <children>
+                        <Text id="nbPionsJ1" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </left>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+         <right>
+            <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="128.0" prefWidth="100.0" spacing="10.0" style="-fx-background-radius: 10px; -fx-background-color: #ededed;" BorderPane.alignment="TOP_CENTER">
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="66.0" text="Joueur 2" textAlignment="CENTER" />
+                  <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
+                     <children>
+                        <Text id="timerJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="0:0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="44.0" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="90.0" spacing="5.0">
+                     <children>
+                        <Text id="nbPionsJ2" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </right>
+         <center>
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+                     <padding>
+                        <Insets left="54.0" />
+                     </padding>
+                  </HBox>
+                  <ImageView fitHeight="270.0" fitWidth="305.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/Grille.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</VBox>

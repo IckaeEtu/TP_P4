@@ -11,7 +11,7 @@ public class ControleurLancerPartie implements EventHandler<ActionEvent> {
     /**
      * modèle du jeu
      */
-    private ModeleP4 modeleP4;
+    private Grille modeleP4;
     /**
      * vue du jeu
      **/
@@ -21,7 +21,7 @@ public class ControleurLancerPartie implements EventHandler<ActionEvent> {
      * @param modelePendu modèle du jeu
      * @param p vue du jeu
      */
-    public ControleurLancerPartie(ModeleP4 modeleP4, Menu vueMenu) {
+    public ControleurLancerPartie(Grille modeleP4, Menu vueMenu) {
         this.modeleP4=modeleP4;
         this.vueMenu=vueMenu;
     }
