@@ -102,7 +102,7 @@ public class ModeleP4 {
     int parcours_lig = ligne;
     int parcours_col = colonne;
     int cpt = 0;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+    while (parcours_lig >= 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
       parcours_lig++;
       parcours_col--;
       cpt++;
@@ -110,7 +110,7 @@ public class ModeleP4 {
       }
     parcours_lig = ligne;
     parcours_col = colonne;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col >= 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
         parcours_lig--;
         parcours_col++;
         cpt++;
@@ -130,7 +130,7 @@ public class ModeleP4 {
         }
       parcours_lig = ligne;
       parcours_col = colonne;
-      while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+      while (parcours_lig >= 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
           parcours_lig++;
           cpt++;
           if (cpt == 4) {return true;}
