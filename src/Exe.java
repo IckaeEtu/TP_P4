@@ -18,8 +18,11 @@ public class Exe {
         p.jouer(2);
         p.jouer(4);
         p.jouer(3);
-        p.victoireDiag(1,1);
-        System.out.println(p.victoireDiag(1,1));
+        System.out.println(p.victoireDiag1(0,0));
+        System.out.println(p.victoire(0,0));
+        System.out.println(p.convert(p.getJeton(0, 0)));
+        System.out.println(p.getJoueurActuel());
+        System.out.println(p.victoire(1,1));
         System.out.println(p.toString());
     }
 }
