@@ -46,7 +46,7 @@ public class ModeleP4 {
   }
   
   public int getJeton(int ligne, int colonne){
-    return plateau.get(ligne).get(colonne);
+    return plateau.get(colonne).get(ligne);
   }
 
   public String convert(int num){
@@ -74,35 +74,35 @@ public class ModeleP4 {
   }
 
   public boolean victoire(int ligne, int colonne){
-    return victoireDiag1(ligne, colonne) || victoireDiag2(ligne, colonne);
+    return victoireDiag1(ligne, colonne) || victoireDiag2(ligne, colonne) || victoireColonne(ligne, colonne) || victoireLigne(ligne,colonne);
   }
 
   public boolean victoireDiag1(int ligne, int colonne){
     int parcours_lig = ligne;
     int parcours_col = colonne;
     int cpt = 1;
-    while (parcours_lig < hauteur && parcours_col < largeur && (!(convert(getJeton(ligne+1, colonne+1)).equals(joueurActuel)))){
+    while (parcours_lig < hauteur && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
       parcours_lig++;
       parcours_col++;
       cpt++;
       if (cpt == 4) {return true;}
-      }
+    }
     parcours_lig = ligne;
     parcours_col = colonne;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(ligne-1, colonne-1)).equals(joueurActuel)))){
+    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
         parcours_lig--;
         parcours_col--;
         cpt++;
         if (cpt == 4) {return true;}
-      }
+    }
     return false;                                                                 
   } 
 
   public boolean victoireDiag2(int ligne, int colonne){
     int parcours_lig = ligne;
     int parcours_col = colonne;
-    int cpt = 1;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(ligne+1, colonne-1)).equals(joueurActuel)))){
+    int cpt = 0;
+    while (parcours_lig >= 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
       parcours_lig++;
       parcours_col--;
       cpt++;
@@ -110,7 +110,7 @@ public class ModeleP4 {
       }
     parcours_lig = ligne;
     parcours_col = colonne;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(ligne-1, colonne+1)).equals(joueurActuel)))){
+    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col >= 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
         parcours_lig--;
         parcours_col++;
         cpt++;
@@ -118,8 +118,44 @@ public class ModeleP4 {
       }
     return false;                                                                 
   } 
+  
+  public boolean victoireColonne(int ligne, int colonne){
+    int parcours_lig = ligne;
+      int parcours_col = colonne;
+      int cpt = 0;
+      while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+        parcours_lig--;
+        cpt++;
+        if (cpt == 4) {return true;}
+        }
+      parcours_lig = ligne;
+      parcours_col = colonne;
+      while (parcours_lig >= 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+          parcours_lig++;
+          cpt++;
+          if (cpt == 4) {return true;}
+        }
+      return false;                                                                 
+    } 
 
-
+    public boolean victoireLigne(int ligne, int colonne){
+      int parcours_lig = ligne;
+        int parcours_col = colonne;
+        int cpt = 0;
+        while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col > 0 && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+          parcours_col--;
+          cpt++;
+          if (cpt == 4) {return true;}
+          }
+        parcours_lig = ligne;
+        parcours_col = colonne;
+        while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col > 0 && parcours_col < largeur && (!(convert(getJeton(parcours_lig, parcours_col)).equals(joueurActuel)))){
+            parcours_col++;
+            cpt++;
+            if (cpt == 4) {return true;}
+          }
+        return false;                                                                 
+      } 
 
 
   @Override
