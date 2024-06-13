@@ -1,11 +1,18 @@
 {
+<<<<<<< HEAD
     // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
     // Pointez pour afficher la description des attributs existants.
     // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+=======
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+>>>>>>> 97150c125512a180fe9308733df3020fce417ad4
     "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Exe",
             "request": "launch",
             "mainClass": "Exe",
@@ -33,6 +40,18 @@
             "vmArgs": "--module-path /usr/share/openjfx/lib/ --add-modules javafx.controls,javafx.fxml",
             "mainClass": "Menu",
             "projectName": "TP_P4_4251610a"
+=======
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Exe",
+            "request": "launch",
+            "mainClass": "Exe",
+            "projectName": "TP_P4_97189bb9"
+>>>>>>> 97150c125512a180fe9308733df3020fce417ad4
         }
     ]
 }
