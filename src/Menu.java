@@ -27,7 +27,9 @@ public class Menu extends BorderPane{
     private BorderPane panelCentral;
     private Chronometre chrono;
 
-
+    /**
+     * @param le stage que l'on met dans la scene
+     */
     public Menu(Stage stage){
         this.btnFermé=new Button();
         this.btnLancer = new Button();
@@ -38,20 +40,27 @@ public class Menu extends BorderPane{
         this.chrono= new Chronometre();
         start(stage);
     }
+    /**
+     * @param le stage et le lancement
+     */
     public void start(Stage stage){
         stage.setTitle("Puissance 4");
         stage.setScene(this.laScene());
         this.pageAccueil();
         stage.show();
     }
-
+    /**
+     * @return la scene de notre P4
+     */
     private Scene laScene() {
         BorderPane fenetre = new BorderPane();
         fenetre.setTop(this.titre());
         fenetre.setCenter(this.panelCentral);
         return new Scene(fenetre, 800, 1000);
     }
-
+    /**
+     * @return le panel du jeu(bandeau du haut)
+     */
     public Pane titre(){
         Stage stage = new Stage();
         stage.setTitle("Puissance 4");
@@ -95,7 +104,9 @@ public class Menu extends BorderPane{
         return bp;
     }
 
-
+    /**
+     * @return le panel de la page d'accueil 
+     */
     private BorderPane pageAccueil(){
         Stage stage = new Stage();
         stage.setTitle("Puissance 4");
@@ -120,27 +131,27 @@ public class Menu extends BorderPane{
         this.panelCentral.setPadding(new Insets(15, 12, 15, 12));
         return this.panelCentral;
     }
-
+    /*lance la partie et le chrono */
     public void lancePartie(){
         pageAccueil();
         this.chrono.resetTime();
         this.chrono.start();
     }
-
+    /*envoie un message d'alerte */
     public Alert popUpPartieEnCours() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "La partie est en cours!\n Etes-vous sûr de l'interrompre ?", ButtonType.YES, ButtonType.NO);
         alert.setTitle("Attention");
         return alert;
     }
-
+    /*envoie un message d'alerte */
     public Alert popUpReglesDuJeu() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Règle du p4");
         alert.setContentText("PLACEZ LES JETONS SUR LES CASES EN BAS DE LA GRILLE ET AYEZ UNE LIGNE DE 4 POUR GAGNER");
         return alert;
     }
-
+    /*envoie un message d'alerte */
     public Alert popUpMessageGagne() {
         
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -149,7 +160,7 @@ public class Menu extends BorderPane{
         alert.setContentText("Félicitation");
         return alert;
     }
-
+    /*envoie un message d'alerte */
     public Alert popUpMessagePerdu() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Perdu");
