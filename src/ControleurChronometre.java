@@ -52,7 +52,7 @@ public class ControleurChronometre implements EventHandler<ActionEvent> {
         tempsEcoule = 0;
         tempsPrec = System.currentTimeMillis();
     }
-
+    /*lance le chronometre */
     public void start() {
         tempsPrec = System.currentTimeMillis();
     }
