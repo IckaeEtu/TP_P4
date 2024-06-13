@@ -1,25 +1,28 @@
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 
-public class ControleurBoutonJeu {
+public class ControleurBoutonJeu implements EventHandler<ActionEvent>{
 
-    private Grille modeleP4;
+    private ModeleP4 modeleP4;
     /**
      * vue du jeu
      **/
-    private Menu vueMenu;
+    private AppliP4 vue;
 
     private int col;
 
-    public ControleurBoutonJeu(Grille mP4,Menu vMenu,int col){
+    public ControleurBoutonJeu(ModeleP4 mP4,AppliP4 vMenu,int col){
         this.modeleP4=mP4;
-        this.vueMenu=vMenu;
+        this.vue=vMenu;
+        this.col=col;
     }
 
     @Override
     public void handle(ActionEvent actionEvent) {
+        int ligne= modeleP4.ligneVide(col);
         modeleP4.jouer(col);
+        modeleP4.victoire(ligne, col);
 
-    }
-    
+    }    
 }

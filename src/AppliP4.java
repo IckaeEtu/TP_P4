@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 public class AppliP4 extends Application {
     private Grille modeleGrille;
     @FXML private HBox lignePlacement;
+    private ModeleP4 modeleP4;
     
     @FXML private StackPane stackPane;
     @FXML private GridPane grille;
@@ -30,7 +31,8 @@ public class AppliP4 extends Application {
 
     @Override
     public void init() {
-        modeleGrille = new Grille(7, 7);
+        modeleP4= new ModeleP4();
+        modeleGrille = new Grille(6, 7);
     }
 
     @Override
@@ -49,7 +51,11 @@ public class AppliP4 extends Application {
         primaryStage.setScene(scene);
         primaryStage.setTitle("Puissance 4");
         primaryStage.show();
-
+        root.setBottom(ajoutBoutonJouer());
+        Chronometre chrono= new Chronometre();
+        root.setRight(chrono);
+        chrono.start();
+        
         // Creation du plateau
         placerTrous();
     }
@@ -71,7 +77,8 @@ public class AppliP4 extends Application {
         //stackPane.getChildren().set(0, grilleBackground);
     }
 
-    public void ajoutBoutonJouer(){
+    public HBox ajoutBoutonJouer(){
+        GridPane grilleBoutonJeu= new GridPane();
         BorderPane bPane= new BorderPane();
         GridPane panel= new GridPane();
         float rayon = 10;
@@ -82,11 +89,22 @@ public class AppliP4 extends Application {
         Button col4 = new Button("col4");
         Button col5 = new Button("col5");
         Button col6 = new Button("col6");
-        // a mettre les setOnAction
+        Button col7 = new Button("col7");
+        col1.setOnAction(new ControleurBoutonJeu(modeleP4, this, 0));
+        col2.setOnAction(new ControleurBoutonJeu(modeleP4, this, 1));
+        col3.setOnAction(new ControleurBoutonJeu(modeleP4, this,2));
+        col4.setOnAction(new ControleurBoutonJeu(modeleP4, this, 3));
+        col5.setOnAction(new ControleurBoutonJeu(modeleP4, this, 4));
+        col6.setOnAction(new ControleurBoutonJeu(modeleP4, this, 5));
+        col7.setOnAction(new ControleurBoutonJeu(modeleP4, this, 6));
 
 
-        hbox.getChildren().addAll(col1,col2,col3,col4,col5,col6);
+        
 
-        bPane.getChildren().addAll(grille,hbox);
+
+        hbox.getChildren().addAll(col1,col2,col3,col4,col5,col6,col7);
+        hbox.setAlignment(javafx.geometry.Pos.CENTER);
+
+        return hbox;
     }
 }
