@@ -88,7 +88,7 @@ public class ModeleP4 {
   }
 
   public boolean victoire(int ligne, int colonne) {
-    return victoireDiag1(ligne, colonne) || victoireDiag2(ligne, colonne) || victoireColonne(ligne, colonne)
+    return victoireDiag1(ligne, colonne) || victoireDiag2(ligne, colonne) || victoireColonne()
         || victoireLigne(ligne, colonne);
   }
 
@@ -146,32 +146,19 @@ public class ModeleP4 {
     return false;
   }
 
-  public boolean victoireColonne(int ligne, int colonne) {
-    int parcours_lig = ligne;
-    int parcours_col = colonne;
-    int cpt = 0;
-    while (parcours_lig > 0 && parcours_lig < hauteur && parcours_col < largeur && parcours_col >= 0
-        && lautreJoueur(convert(getJeton(ligne, colonne)))) {
-      cpt++;
-      parcours_lig--;
-      System.out.println(getJeton(ligne, colonne));
-      System.out.println(cpt);
-      if (cpt == 4) {
-        return true;
+  public boolean victoireColonne() {
+    int condi=0;
+    for (List<Integer> col:plateau){
+      for (Integer val:col){
+        if (lautreJoueur(convert(val))){
+          condi++;
+        }
+        else{
+          condi=0;
+        }
+        if (condi==4){return true;}
       }
-    }
-    System.out.println("autre direction");
-    parcours_lig = ligne;
-    parcours_col = colonne;
-    while (parcours_lig >= 0 && parcours_lig < hauteur && parcours_col >= 0 && parcours_col < largeur
-        && lautreJoueur(convert(getJeton(ligne, colonne)))) {
-      parcours_lig++;
-      System.out.println(getJeton(ligne, colonne));
-      System.out.println(cpt);
-      cpt++;
-      if (cpt == 4) {
-        return true;
-      }
+      condi=0;
     }
     return false;
   }
