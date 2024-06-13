@@ -191,6 +191,15 @@ public class ModeleP4 {
     return false;
   }
 
+  public boolean grillePleine(){
+    for (List<Integer> col:plateau){
+      for (Integer val:col){
+        if (val==0){return false;}
+      }
+    }
+    return true;
+  }
+
   @Override
   public String toString() {
     String res = "Plateau P4 \n";
