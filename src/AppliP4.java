@@ -59,7 +59,7 @@ public class AppliP4 extends Application {
         // Creation du plateau
         placerTrous();
     }
-
+    /*place le trou pour jouer dans ces endroits */
     private void placerTrous() {
         for (int i = 0; i < modeleGrille.getNbLignes(); i++) {
             for (int j = 0; j < modeleGrille.getNbColonnes(); j++) {
@@ -76,7 +76,9 @@ public class AppliP4 extends Application {
 
         //stackPane.getChildren().set(0, grilleBackground);
     }
-
+    /**
+     * @return renvoie un Hbox contenant tous les boutons et les actions
+     */
     public HBox ajoutBoutonJouer(){
         GridPane grilleBoutonJeu= new GridPane();
         BorderPane bPane= new BorderPane();
