@@ -3,19 +3,19 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 
 public class ControleurBoutonJeu implements EventHandler<ActionEvent>{
-    /**
+    /*
     * le modele du jeu
-    **/
+    */
     private ModeleP4 modeleP4;
-    /**
+    /*
      * vue du jeu
-     **/
+     */
     private AppliP4 vue;
-    /**
+    /*
     *le numéro de la colonne
-    **/
+    */
     private int col;
-     /**
+     /*
      * Constructeur du contrôleur du bouton de jeu
      * @param mP4 le modele de notre p4
      * @param vMenu l'application de notre jeu
