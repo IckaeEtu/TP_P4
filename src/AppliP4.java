@@ -16,25 +16,29 @@ import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
 public class AppliP4 extends Application {
+    /*La grille du puissance 4 */ 
     private Grille modeleGrille;
     @FXML private HBox lignePlacement;
+    /*Le modèle du puissance 4 */
     private ModeleP4 modeleP4;
     
     @FXML private StackPane stackPane;
     @FXML private GridPane grille;
     @FXML private Shape grilleBackground;
 
-    
+    /*Permet de lancer l'application */
     public static void main(String[] args) {
         launch(args);
     }
-
+    
+    /*Initialise les éléments de l'application */
     @Override
     public void init() {
         modeleP4= new ModeleP4();
         modeleGrille = new Grille(6, 7);
     }
 
+    
     @Override
     public void start(Stage primaryStage) throws IOException {
         // Création d'une instance de FXMLLoader
