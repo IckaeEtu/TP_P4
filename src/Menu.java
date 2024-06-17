@@ -19,12 +19,19 @@ import javafx.stage.Stage;
 
 
 public class Menu extends BorderPane{
+    /*Le bouton pour lancer la partie */
     private Button btnLancer;
+    /* Le bouton pour quitter le jeu*/
     private Button btnFermé;
+    /*Le bouton pour se connecter */
     private Button  btnConnexion;
+    /*Le bouton pour avoir accès au menu de skins */
     private Button btnSkin;
+    /* */
     private Label text;
+    /*Le panel central, celui sur lequel le principal de l'application se déroule */
     private BorderPane panelCentral;
+    /*Le chronomètre de la partie */
     private Chronometre chrono;
 
     /**
@@ -137,21 +144,21 @@ public class Menu extends BorderPane{
         this.chrono.resetTime();
         this.chrono.start();
     }
-    /*envoie un message d'alerte */
+    /*envoie un message d'alerte avertissant qu'une partie est en cours*/
     public Alert popUpPartieEnCours() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION,
                 "La partie est en cours!\n Etes-vous sûr de l'interrompre ?", ButtonType.YES, ButtonType.NO);
         alert.setTitle("Attention");
         return alert;
     }
-    /*envoie un message d'alerte */
+    /*envoie un message d'alerte donnant les règles du jeu*/
     public Alert popUpReglesDuJeu() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Règle du p4");
         alert.setContentText("PLACEZ LES JETONS SUR LES CASES EN BAS DE LA GRILLE ET AYEZ UNE LIGNE DE 4 POUR GAGNER");
         return alert;
     }
-    /*envoie un message d'alerte */
+    /*envoie un message d'alerte avertissant que la partie est gagnée*/
     public Alert popUpMessageGagne() {
         
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -160,7 +167,7 @@ public class Menu extends BorderPane{
         alert.setContentText("Félicitation");
         return alert;
     }
-    /*envoie un message d'alerte */
+    /*envoie un message d'alerte avertissant que la partie est perdue*/
     public Alert popUpMessagePerdu() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Perdu");
