@@ -10,6 +10,7 @@ public class JoueurP4 {
 
     /*
      * Constructeur qui crée un nouveau joueur sans skins
+     * @param le nom du joueur
      */
     public JoueurP4(String pseudo){
         this.pseudo = pseudo;
@@ -18,6 +19,8 @@ public class JoueurP4 {
 
     /*
      * Un constructeur qui crée un nouveau joueur qui a déjà des skins
+     * @param le nom du joueur
+     * @param la clé permettant de savoir quels skins l'on possède
      */
     public JoueurP4(String pseudo, String key_skins){
         this.pseudo = pseudo;
@@ -31,6 +34,8 @@ public class JoueurP4 {
 
     /*
      * Vérifie si un joueur possède un certain skin à un certain indice, en vérifiant qu'il y a un 1 à l'indice donné
+     * @param l'indice du skin demandé
+     * @return true si le skins est possèdé et false sinon
      */
     public boolean aSkin(int ind){
         int cpt = 0;
